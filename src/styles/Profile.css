@@ -1,0 +1,32 @@
+
+
+.Profile img {
+  max-width: 300px;
+}
+
+.bio {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.bio-photo {
+  flex: 1;
+}
+
+.bio-details {
+  flex: 1;
+}
+
+.sniffing-btn {
+  padding: 20px;
+  border: 3px solid grey;
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+}
+
+.sniffing-btn:hover {
+  background-color: grey;
+  color: white;
+}

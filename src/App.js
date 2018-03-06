@@ -5,6 +5,8 @@ import DislikeButton from './components/Dislike'
 import LikeButton from  './components/Like'
 import ShowMatches from  './components/ShowMatches'
 import CreateUser from  './components/CreateUser'
+import Profile from './components/Profile'
+
 
 
 
@@ -14,6 +16,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+
+        <h1>DogBuds</h1>
+        
+        <Profile
+          name="Scott Baxendale"
+          age="27"
+          location="Amsterdam"
+          bio="Chasing tail since 1990"
+          image="http://blog.gudog.co.uk/wp-content/uploads/2015/03/gsd-and-older-man.jpg"
+        />
+
         <div className="CreateUser">
           <h1>Create a Profile!</h1>
           <br />
