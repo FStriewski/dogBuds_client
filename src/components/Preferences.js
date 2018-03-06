@@ -8,9 +8,9 @@ class Preferences extends Component {
       <div className="Preferences">
         <h3>Preferences</h3>
 
-        <Dogs image="https://dog.ceo/api/breeds/image/random"/>
-        <Dogs image="https://dog.ceo/api/breeds/image/random"/>
-        <Dogs image="https://dog.ceo/api/breeds/image/random"/>
+        <Dogs image=""/>
+        <Dogs image=""/>
+        <Dogs image=""/>
 
       </div>
     )

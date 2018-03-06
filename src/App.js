@@ -19,14 +19,8 @@ class App extends Component {
 
 
         <h1>DogBuds</h1>
-        
-        <Profile
-          name="Scott Baxendale"
-          age="27"
-          location="Amsterdam"
-          bio="Chasing tail since 1990"
-          image="http://blog.gudog.co.uk/wp-content/uploads/2015/03/gsd-and-older-man.jpg"
-        />
+
+        <Profile />
 
         <div className="CreateUser">
           <h1>Create a Profile!</h1>
