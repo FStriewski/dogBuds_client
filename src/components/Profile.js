@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Preferences from './Preferences';
 import Matches from './Matches'
 
+import { connect } from 'react-redux'
+
 import '../styles/Profile.css'
 
 class Profile extends Component {
@@ -17,23 +19,25 @@ class Profile extends Component {
         <div className="bio">
 
           <div className="bio-photo">
-            <img src={ this.props.image } alt="profile"/>
+            <img src={ this.props.user.image } alt="profile"/>
           </div>
 
           <div className="bio-details">
-            <p>Name: { this.props.name } </p>
-            <p>Age: { this.props.age }</p>
-            <p>Location: { this.props.location } </p>
-            <p>Bio: { this.props.bio } </p>
+            <p>Name: { this.props.user.name } </p>
+            <p>Age: { this.props.user.age }</p>
+            <p>Location: { this.props.user.location } </p>
+            <p>Bio: { this.props.user.bio } </p>
           </div>
 
         </div>
 
         <a href="" className="sniffing-btn">Start Sniffing</a>
 
+        <Matches />
+
         <Preferences />
 
-        <Matches />
+
 
         <a href="" className="sniffing-btn">Start Sniffing</a>
 
@@ -42,4 +46,13 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+const mapStateToProps = (reduxState) => {
+  // return an object with the prop names (keys) and prop values
+  // taken from the reduxState (values)
+  return {
+    user: reduxState.user
+  }
+}
+
+
+export default connect(mapStateToProps)(Profile)
