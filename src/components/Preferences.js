@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Dogs from './Dogs'
 
+import { connect } from 'react-redux'
+
 class Preferences extends Component {
 
   render() {
@@ -8,12 +10,20 @@ class Preferences extends Component {
       <div className="Preferences">
         <h3>Preferences</h3>
 
-        <Dogs image=""/>
-        <Dogs image=""/>
-        <Dogs image=""/>
-
+        <div className="preferences-container">
+          <Dogs breed={this.props.user.preferences[0].breed } image=""/>
+          <Dogs breed={this.props.user.preferences[1].breed } image=""/>
+          <Dogs breed={this.props.user.preferences[2].breed } image=""/>
+        </div>
       </div>
     )
   }
 }
- export default Preferences;
+
+const mapStateToProps = (reduxState) => {
+  return {
+    user: reduxState.user
+  }
+}
+
+export default connect(mapStateToProps)(Preferences)
