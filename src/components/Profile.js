@@ -17,7 +17,7 @@ class Profile extends Component {
         <div className="bio">
 
           <div className="bio-photo">
-            <img src={ this.props.image }/>
+            <img src={ this.props.image } alt="profile"/>
           </div>
 
           <div className="bio-details">

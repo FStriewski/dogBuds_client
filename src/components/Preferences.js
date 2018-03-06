@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Likes from './Likes'
+import Dogs from './Dogs'
 
 class Preferences extends Component {
 
@@ -8,17 +8,9 @@ class Preferences extends Component {
       <div className="Preferences">
         <h3>Preferences</h3>
 
-        <Likes />
-        <Likes />
-        <Likes />
-        <Likes />
-        <Likes />
-        <Likes />
-        <Likes />
-        <Likes />
-        <Likes />
-        <Likes />
-        
+        <Dogs image="https://dog.ceo/api/breeds/image/random"/>
+        <Dogs image="https://dog.ceo/api/breeds/image/random"/>
+        <Dogs image="https://dog.ceo/api/breeds/image/random"/>
 
       </div>
     )
