@@ -6,10 +6,7 @@ import LikeButton from  './components/Like'
 import ShowMatches from  './components/ShowMatches'
 import CreateUser from  './components/CreateUser'
 import Profile from './components/Profile'
-
-
-
-
+import Dogs from './components/Dogs'
 
 
 class App extends Component {
@@ -29,7 +26,7 @@ class App extends Component {
         </div>
         <div className="Sniffing">
           <h1>Start Sniffing!</h1>
-          <Image />
+          <Dogs />
           <br />
           <DislikeButton />
           <LikeButton />

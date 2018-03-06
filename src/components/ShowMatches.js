@@ -4,8 +4,8 @@ export class ShowMatches extends PureComponent {
 
   render() {
     return (
-      <button className="Button ShowMatches"
-      >Show my matches!
+      <button className="Button ShowMatches">
+        Show my matches!
       </button>
     )
   }
