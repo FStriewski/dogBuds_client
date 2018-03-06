@@ -1,5 +1,7 @@
 import user from './user'
+import dog from './sniffer'
 
 export default {
-  user: user
+  user,
+  dog
 }
