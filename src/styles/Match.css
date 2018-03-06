@@ -1,0 +1,7 @@
+.Match {
+  flex: 1;
+}
+
+.Match img {
+  max-width: 300px;
+}
