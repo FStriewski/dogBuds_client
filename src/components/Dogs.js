@@ -6,7 +6,7 @@ class Dogs extends Component {
     return (
       <div className="Dogs">
         <img src={ this.props.image } alt="dog"/>
-        <p>Breed: </p>
+        <p>Breed: { this.props.breed }</p>
       </div>
     )
   }
