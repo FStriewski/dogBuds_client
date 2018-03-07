@@ -27,13 +27,11 @@ class Profile extends Component {
             <p>Email: { this.props.user.email } </p>
             <p>Location: { this.props.user.location } </p>
             <p>Age: { this.props.user.age }</p>
-            
+
 
           </div>
 
         </div>
-
-        <a href="" className="sniffing-btn">Start Sniffing</a>
 
         <Matches />
 
