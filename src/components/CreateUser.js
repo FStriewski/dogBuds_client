@@ -12,20 +12,46 @@ export class CreateUser extends PureComponent {
 
     render() {
       return (
+        <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="first_name" value="first name" onChange={ this.handleChange }/>
-          <input type="text" name="last_name" value="last name" onChange={ this.handleChange }/>
-          <input type="integer" name="age" value="age" onChange={ this.handleChange }/>
-          <label>
-            Write a short bio:
-            <input type="text" name="profile_image" onChange={ this.handleChange }/>
-          </label>
-          <label>
-            Upload image:
-            <input type="text" name="profile_image" onChange={ this.handleChange }/>
-          </label>
+          <div>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email"/><br/>
+          </div>
+          <div>
+            <label for="passwprd">Password: </label>
+            <input type="text" name="password" id="password"/><br/>
+          </div>
+          <br/>
+          <br/>
+
+          <div>
+            <p>Tell us a little about yourself!</p>
+          </div>
+
+          <div>
+            <label for="username">Name: </label>
+            <input type="text" name="username" id="username"/>
+          </div>
+          <br/>
+          <div>
+            <label for="age">Age: </label>
+            <input type="text" name="age" id="age"/>
+          </div>
+          <br/>
+          <div>
+            <label for="location">Location: </label>
+            <input type="text" name="location" id="location"/>
+          </div>
+          <br/>
+          <div>
+            <label for="url">Image: </label>
+            <input type="url" name="image" id="url"/>
+          </div>
+
           <button type="submit">Submit</button>
         </form>
+        </div>
       )
     }
   }
