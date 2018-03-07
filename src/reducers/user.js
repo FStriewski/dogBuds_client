@@ -1,8 +1,9 @@
 const initialUser = {
-  name: "Scott Baxendale",
+  username: "Scott Baxendale",
+  password: "",
+  email: "scott@gmail.com",
   age: "27",
   location: "Amsterdam",
-  bio: "Chasing tail since 1990",
   image: "http://blog.gudog.co.uk/wp-content/uploads/2015/03/gsd-and-older-man.jpg",
   preferences: [
     { breed: "Akita", votes: 10 },
