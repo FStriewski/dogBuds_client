@@ -1,6 +1,7 @@
 .Matches-container{
   display: flex;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .Match {
@@ -14,5 +15,9 @@
 
 .sniffing-btn {
   display: inline-block;
+  margin: 50px;
+}
+
+.title {
   margin: 50px;
 }
