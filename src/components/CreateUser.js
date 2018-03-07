@@ -1,22 +1,26 @@
 import React, { PureComponent } from 'react'
-
-
+import {connect} from 'react-redux'
+import {createUser} from '../actions/createUser'
 
 class CreateUser extends PureComponent {
-	state = {}
+	// state = {}
 
-	handleSubmit = (e) => {
-		e.preventDefault()
-		this.props.onSubmit(this.state)
-	}
+  handleSubmit = (user) => {
+    this.props.createUser(user)
+  }
+
+	// handleSubmit = (e) => {
+	// 	e.preventDefault()
+	// 	this.props.onSubmit(this.state)
+	// }
 
 	handleChange = (event) => {
     const {name, value} = event.target
 
-    this.setState({
-      [name]: value
-    })
-  }
+  //   this.setState({
+  //     [name]: value
+  //   })
+   }
 
     render() {
       return (
@@ -64,4 +68,12 @@ class CreateUser extends PureComponent {
     }
   }
 
-  export default CreateUser
+  //export default CreateUser
+
+  const mapStateToProps = function (user) {
+  return {
+    user: user
+  }
+}
+
+  export default connect(mapStateToProps, {createUser })(CreateUser)

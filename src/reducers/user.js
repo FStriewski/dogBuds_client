@@ -1,8 +1,10 @@
+import {ADD_USER} from '../actions/createUser'
+
 const initialUser = {
-  name: "Scott Baxendale",
+  username: "Scott Baxendale",
   age: "27",
   location: "Amsterdam",
-  bio: "Chasing tail since 1990",
+  email: "Test@test.com",
   image: "http://blog.gudog.co.uk/wp-content/uploads/2015/03/gsd-and-older-man.jpg",
   preferences: [
     { breed: "Akita", votes: 10 },
@@ -11,9 +13,11 @@ const initialUser = {
   ]
 }
 
-
-export default function(state = initialUser, action = {}) {
-
-  return state
-
+export default function (state = initialUser, action) {
+  switch (action.type) {
+    case ADD_USER:
+      return action.payload
+    default:
+      return state
+  }
 }
