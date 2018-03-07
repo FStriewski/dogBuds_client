@@ -39,47 +39,6 @@ class Preferences extends Component {
           />
         </div>
 
-        <div className="preferences-container">
-          <Preferred
-            className="preferred"
-            breed={ this.props.user.info.preferences[0].breed }
-            votes={ this.props.user.info.preferences[0].votes }
-            image=""
-          />
-          <Preferred
-            className="preferred"
-            breed={ this.props.user.info.preferences[1].breed }
-            votes={ this.props.user.info.preferences[1].votes }
-            image=""
-          />
-          <Preferred
-            className="preferred"
-            breed={ this.props.user.info.preferences[2].breed }
-            votes={ this.props.user.info.preferences[2].votes }
-            image=""
-          />
-        </div>
-
-        <div className="preferences-container">
-          <Preferred
-            className="preferred"
-            breed={ this.props.user.info.preferences[0].breed }
-            votes={ this.props.user.info.preferences[0].votes }
-            image=""
-          />
-          <Preferred
-            className="preferred"
-            breed={ this.props.user.info.preferences[1].breed }
-            votes={ this.props.user.info.preferences[1].votes }
-            image=""
-          />
-          <Preferred
-            className="preferred"
-            breed={ this.props.user.info.preferences[2].breed }
-            votes={ this.props.user.info.preferences[2].votes }
-            image=""
-          />
-        </div>
 
         <p><b>Want to see more dogs?</b></p>
 
