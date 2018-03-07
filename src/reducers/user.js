@@ -1,4 +1,4 @@
-import {ADD_USER} from '../actions/createUser'
+import {ADD_USER} from '../actions/newUser'
 
 const initialUser = {
   username: "Scott Baxendale",
@@ -13,10 +13,18 @@ const initialUser = {
   ]
 }
 
-export default function (state = initialUser, action) {
+const cleanStart = {
+  preferences: [
+    { breed: "Akita", votes: 10 },
+    { breed: "Bloodhound", votes: 5 },
+    { breed: "Greyhound", votes: 3 }
+  ]
+}
+
+export default function (state = cleanStart, action) {
   switch (action.type) {
     case ADD_USER:
-      return action.payload
+      return [...state, action.payload]
     default:
       return state
   }
