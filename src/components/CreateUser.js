@@ -4,6 +4,9 @@ import {createUser} from '../actions/createUser'
 
 class CreateUser extends PureComponent {
 	// state = {}
+  componentWillMount(props) {
+  this.props.createUser(this.props.match.params.id)
+}
 
   handleSubmit = (user) => {
     this.props.createUser(user)
@@ -23,16 +26,19 @@ class CreateUser extends PureComponent {
    }
 
     render() {
+      const {user} = this.props
+      if (!user) return null
+
       return (
         <div>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label for="email">Email: </label>
-            <input type="text" name="email" id="email" placeholder="email@xyz.com" value={this.state.email || ''} onChange={ this.handleChange }/>
+            <input type="text" name="email" id="email" placeholder="email@xyz.com" value={user.email || ''} onChange={ this.handleChange }/>
           </div>
           <div>
             <label for="password">Password: </label>
-            <input type="text" name="password" id="password" value={this.state.password || ''} onChange={ this.handleChange }/>
+            <input type="text" name="password" id="password" value={user.password || ''} onChange={ this.handleChange }/>
           </div>
           <br/>
           <br/>
@@ -43,22 +49,22 @@ class CreateUser extends PureComponent {
 
           <div>
             <label for="username">Name: </label>
-            <input type="text" name="username" id="username" placeholder="Dog Buddy 999" value={this.state.username || ''} onChange={ this.handleChange }/>
+            <input type="text" name="username" id="username" placeholder="Dog Buddy 999" value={user.username || ''} onChange={ this.handleChange }/>
           </div>
           <br/>
           <div>
             <label for="age">Age: </label>
-            <input type="text" name="age" id="age" value={this.state.age || 0} onChange={ this.handleChange }/>
+            <input type="text" name="age" id="age" value={user.age || 0} onChange={ this.handleChange }/>
           </div>
           <br/>
           <div>
             <label for="location">Location: </label>
-            <input type="text" name="location" id="location" placeholder="Amsterdam, NL" value={this.state.location || ''} onChange={ this.handleChange }/>
+            <input type="text" name="location" id="location" placeholder="Amsterdam, NL" value={user.location || ''} onChange={ this.handleChange }/>
           </div>
           <br/>
           <div>
             <label for="url">Image: </label>
-            <input type="url" name="image" id="url" placeholder="https://www.example.com/image/me.png" value={this.state.url || ''} onChange={ this.handleChange }/>
+            <input type="url" name="image" id="url" placeholder="https://www.example.com/image/me.png" value={user.url || ''} onChange={ this.handleChange }/>
           </div>
           <br/>
           <button type="submit">Create</button>
@@ -70,9 +76,9 @@ class CreateUser extends PureComponent {
 
   //export default CreateUser
 
-  const mapStateToProps = function (user) {
+  const mapStateToProps = function (state, props) {
   return {
-    user: user
+    user: state.user
   }
 }
 

@@ -4,7 +4,7 @@ const initialUser = {
   username: "Scott Baxendale",
   age: "27",
   location: "Amsterdam",
-  email: "Test@test.com",
+  email: "test@test.com",
   image: "http://blog.gudog.co.uk/wp-content/uploads/2015/03/gsd-and-older-man.jpg",
   preferences: [
     { breed: "Akita", votes: 10 },
