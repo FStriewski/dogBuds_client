@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-// import PropTypes from 'prop-types'
 import { fetchDog } from '../actions/dogs'
+import DislikeButton from './Dislike'
+import LikeButton from  './Like'
+import ShowMatches from  './ShowMatches'
 
 class Dogs extends Component {
-  // static propTypes = {
-  //   breed: PropTypes.string.isRequired,
-  //   image: PropTypes.string.isRequired,
-  // }
 
   componentWillMount() {
     this.props.fetchDog(67)
@@ -19,6 +17,11 @@ class Dogs extends Component {
       <div className="Dogs">
         <img src={ dog.dog.image } alt="dog"/>
         <p>Breed: { dog.dog.breed }</p>
+        <br />
+        <DislikeButton />
+        <LikeButton />
+        <br />
+        <ShowMatches />
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Image from './components/Image'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import DislikeButton from './components/Dislike'
 import LikeButton from  './components/Like'
 import ShowMatches from  './components/ShowMatches'
@@ -14,25 +15,16 @@ class App extends Component {
     return (
       <div className="App">
 
+      <Router>
+       <div>
+         <Route exact path="/profile" component={Profile} />
+         <Route exact path="/sniffing" component={Dogs} />
+         <Route exact path="/" render={ () => <Redirect to="/profile" /> } />
+       </div>
+     </Router>
 
-        <h1>DogBuds</h1>
 
-        <Profile />
 
-        <div className="CreateUser">
-          <h1>Create a Profile!</h1>
-          <br />
-          <CreateUser />
-        </div>
-        <div className="Sniffing">
-          <h1>Start Sniffing!</h1>
-          <Dogs />
-          <br />
-          <DislikeButton />
-          <LikeButton />
-          <br />
-          <ShowMatches />
-        </div>
 
       </div>
     );
