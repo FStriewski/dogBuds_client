@@ -4,8 +4,8 @@ export class LikeButton extends PureComponent {
 
   render() {
     return (
-      <button className="Button Like"
-      >Like
+      <button className="Button Like">
+        Like
       </button>
     )
   }
