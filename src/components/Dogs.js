@@ -12,11 +12,11 @@ class Dogs extends Component {
   }
 
   render() {
-    const {dog} = this.props
+    const {dog} = this.props.dog
     return (
       <div className="Dogs">
-        <img src={ dog.dog.image } alt="dog"/>
-        <p>Breed: { dog.dog.breed }</p>
+        <img src={ dog.image } alt="dog"/>
+        <p>Breed: { dog.breed }</p>
         <br />
         <DislikeButton />
         <LikeButton />
