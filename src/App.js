@@ -14,7 +14,7 @@ class App extends Component {
       <h1>DogBuds</h1>
       <Router>
        <div>
-         <Route exact path="/profile" component={Profile} />
+         <Route exact path="/users/:id" component={Profile} />
          <Route exact path="/sniffing" component={Dogs} />
          <Route exact path="/login" component={CreateUser} />
          <Route exact path="/" render={ () => <Redirect to="/profile" /> } />
