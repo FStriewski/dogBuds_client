@@ -4,9 +4,11 @@ const baseUrl = 'http://localhost:4001'
 
 export const FETCH_DOG = 'FETCH_DOG'
 
-export const fetchDog = (dogId) => (dispatch) => {
+export const fetchDog = () => (dispatch) => {
+  let randomDog = Math.floor((Math.random() * 79) + 1);
+
   request
-    .get(`${baseUrl}/sniffing/${dogId}`)
+    .get(`${baseUrl}/sniffing/${randomDog}`)
     .then(response => dispatch({
       type: FETCH_DOG,
       payload: response.body
