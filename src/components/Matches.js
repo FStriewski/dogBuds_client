@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Match from './Match'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import '../styles/Matches.css'
 
@@ -52,7 +53,7 @@ class Matches extends Component {
 
         <p><b>Want to find more matches?</b></p>
 
-        <a href="" className="sniffing-btn">Start Sniffing</a>
+        <Link to={ `/sniffing` }>Start Sniffing</Link>
 
 
       </div>

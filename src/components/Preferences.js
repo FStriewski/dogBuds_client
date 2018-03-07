@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Preferred from './Preferred'
 import { fetchUser } from '../actions/users'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import '../styles/Preferences.css'
 
@@ -82,8 +83,7 @@ class Preferences extends Component {
 
         <p><b>Want to see more dogs?</b></p>
 
-        <a href="" className="sniffing-btn">Start Sniffing</a>
-
+        <Link to={ `/sniffing` }>Start Sniffing</Link>
       </div>
     )
   }
