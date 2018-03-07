@@ -53,7 +53,7 @@ class Matches extends Component {
 
         <p><b>Want to find more matches?</b></p>
 
-        <Link to={ `/sniffing` }>Start Sniffing</Link>
+        <Link to={ `/sniffing` } className="sniffing-btn">Start Sniffing</Link>
 
 
       </div>
