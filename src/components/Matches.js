@@ -12,7 +12,7 @@ class Matches extends Component {
 
     return (
       <div className="Matches">
-        <h3>Matches</h3>
+        <h2>Matches</h2>
         <h4>Below are your top 3 matches</h4>
         <div className="Matches-container">
           <Match
@@ -50,8 +50,8 @@ class Matches extends Component {
           />
         </div>
 
-        <p>Want to find more matches?</p>
-        
+        <p><b>Want to find more matches?</b></p>
+
         <a href="" className="sniffing-btn">Start Sniffing</a>
 
 

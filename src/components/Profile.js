@@ -38,9 +38,6 @@ class Profile extends Component {
         <Preferences />
 
 
-
-        <a href="" className="sniffing-btn">Start Sniffing</a>
-
       </div>
     );
   }
