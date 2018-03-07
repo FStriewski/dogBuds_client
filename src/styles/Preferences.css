@@ -1,0 +1,12 @@
+.title {
+  margin-bottom: 100px;
+}
+
+.preferences-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.preferred {
+  flex: 1;
+}

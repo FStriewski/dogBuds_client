@@ -23,23 +23,20 @@ class Profile extends Component {
           </div>
 
           <div className="bio-details">
-            <p>Name: { this.props.user.name } </p>
-            <p>Age: { this.props.user.age }</p>
+            <p>Username: { this.props.user.username } </p>
+            <p>Email: { this.props.user.email } </p>
             <p>Location: { this.props.user.location } </p>
-            <p>Bio: { this.props.user.bio } </p>
+            <p>Age: { this.props.user.age }</p>
+
+
           </div>
 
         </div>
-
-        <a href="" className="sniffing-btn">Start Sniffing</a>
 
         <Matches />
 
         <Preferences />
 
-
-
-        <a href="" className="sniffing-btn">Start Sniffing</a>
 
       </div>
     );
