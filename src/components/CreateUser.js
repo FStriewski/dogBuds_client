@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 
+
 // To do: change the input type of the "profile_image"
 
 export class CreateUser extends PureComponent {
