@@ -1,14 +1,22 @@
 import React, { PureComponent } from 'react'
 
-// To do: change the input type of the "profile_image"
 
-export class CreateUser extends PureComponent {
 
-    handleSubmit = (e) => {
-    }
+class CreateUser extends PureComponent {
+	state = {}
 
-    handleChange = (event) => {
-    }
+	handleSubmit = (e) => {
+		e.preventDefault()
+		this.props.onSubmit(this.state)
+	}
+
+	handleChange = (event) => {
+    const {name, value} = event.target
+
+    this.setState({
+      [name]: value
+    })
+  }
 
     render() {
       return (
@@ -16,11 +24,11 @@ export class CreateUser extends PureComponent {
         <form onSubmit={this.handleSubmit}>
           <div>
             <label for="email">Email: </label>
-            <input type="email" name="email" id="email"/><br/>
+            <input type="text" name="email" id="email" placeholder="email@xyz.com" value={this.state.email || ''} onChange={ this.handleChange }/>
           </div>
           <div>
-            <label for="passwprd">Password: </label>
-            <input type="text" name="password" id="password"/><br/>
+            <label for="password">Password: </label>
+            <input type="text" name="password" id="password" value={this.state.password || ''} onChange={ this.handleChange }/>
           </div>
           <br/>
           <br/>
@@ -31,25 +39,25 @@ export class CreateUser extends PureComponent {
 
           <div>
             <label for="username">Name: </label>
-            <input type="text" name="username" id="username"/>
+            <input type="text" name="username" id="username" placeholder="Dog Buddy 999" value={this.state.username || ''} onChange={ this.handleChange }/>
           </div>
           <br/>
           <div>
             <label for="age">Age: </label>
-            <input type="text" name="age" id="age"/>
+            <input type="text" name="age" id="age" value={this.state.age || 0} onChange={ this.handleChange }/>
           </div>
           <br/>
           <div>
             <label for="location">Location: </label>
-            <input type="text" name="location" id="location"/>
+            <input type="text" name="location" id="location" placeholder="Amsterdam, NL" value={this.state.location || ''} onChange={ this.handleChange }/>
           </div>
           <br/>
           <div>
             <label for="url">Image: </label>
-            <input type="url" name="image" id="url"/>
+            <input type="url" name="image" id="url" placeholder="https://www.example.com/image/me.png" value={this.state.url || ''} onChange={ this.handleChange }/>
           </div>
-
-          <button type="submit">Submit</button>
+          <br/>
+          <button type="submit">Create</button>
         </form>
         </div>
       )
