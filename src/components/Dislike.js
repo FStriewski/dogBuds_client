@@ -2,10 +2,9 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { fetchDog } from '../actions/dogs'
 
+
 export class DislikeButton extends PureComponent {
-  // static propTypes = {
-  //     [createGame]: PropTypes.func.isRequired
-  //   }
+
   handleClick = () => {
     this.props.fetchDog()
   }
