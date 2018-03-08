@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Preferred from './Preferred'
 import { fetchUser } from '../actions/users'
+
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
@@ -77,4 +78,4 @@ const mapStateToProps = function (state, props) {
 }
 
 
-export default connect(mapStateToProps, { fetchUser })(Preferences)
+export default connect(mapStateToProps, { fetchUser } )(Preferences)
