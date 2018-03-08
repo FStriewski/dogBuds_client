@@ -8,6 +8,8 @@ import { connect } from 'react-redux'
 
 import '../styles/Profile.css'
 
+
+
 class Profile extends Component {
 
   componentWillMount() {
@@ -29,7 +31,7 @@ class Profile extends Component {
 
           <div className="bio-details">
             <p>Username: { this.props.user.info.username } </p>
-            <p>Email: { this.props.user.info.email } </p>
+            <p>Email: { this.props.user.email } </p>
             <p>Location: { this.props.user.info.location } </p>
             <p>Age: { this.props.user.info.age }</p>
 

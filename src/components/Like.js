@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchDog } from "../actions/dogs";
 import { makeVote } from "../actions/dogs";
+import button from "../styles/Button.css"
 
 export class LikeButton extends Component {
 
