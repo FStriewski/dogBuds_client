@@ -1,10 +1,10 @@
-import {FETCH_DOG} from '../actions/dogs'
+import { FETCH_DOG } from "../actions/dogs";
 
-export default function (state = [], action) {
+export default function(state = [], action) {
   switch (action.type) {
     case FETCH_DOG:
-      return action.payload
+      return action.payload;
     default:
-      return state
+      return state;
   }
 }
