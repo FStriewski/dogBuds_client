@@ -27,7 +27,7 @@ class Preferences extends Component {
              .sort(function(a, b) {
                return  (b.votes - a.votes);
              })
-             .slice(0,9)
+             .slice(0,5)
              .map(preference =>
 
              <Preferred
@@ -39,6 +39,25 @@ class Preferences extends Component {
            )
          }
            </div>
+
+           <div className="preferences-container">
+
+              {this.props.user.info.preferences
+                .sort(function(a, b) {
+                  return  (b.votes - a.votes);
+                })
+                .slice(5,10)
+                .map(preference =>
+
+                <Preferred
+                  className="preferred"
+                  breed={ preference.breed }
+                  votes={ preference.votes }
+                  image="https://www.what-dog.net/Images/faces2/scroll001.jpg"
+                />
+              )
+            }
+          </div>
 
 
         <p><b>Want to see more dogs?</b></p>
