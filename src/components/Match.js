@@ -12,9 +12,9 @@ class Match extends Component {
         <p>Location: {this.props.location }</p>
         <br/>
         <p>Top 3 Breeds:</p>
-        <p>1. { this.props.breed1 }</p>
-        <p>2. { this.props.breed2 }</p>
-        <p>3. { this.props.breed3 }</p>
+        <p>1. { this.props.breed1 } (Votes: {this.props.votes1})</p>
+        <p>2. { this.props.breed2 } (Votes: {this.props.votes2})</p>
+        <p>3. { this.props.breed3 } (Votes: {this.props.votes3})</p>
         <br/>
 
         <button className="contact"><a href={this.props.email}>Contact Me</a></button>

@@ -2,13 +2,14 @@
 
 .Profile img {
   max-width: 300px;
+  border-radius: 10%;
 }
 
 .bio {
   display: flex;
   margin-top: 100px;
   margin-bottom: 100px;
-  
+
 }
 
 .bio-photo {

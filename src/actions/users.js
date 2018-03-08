@@ -1,9 +1,10 @@
 import * as request from 'superagent'
 
-const baseUrl = 'http://localhost:4002'
+const baseUrl = 'http://localhost:4001'
 
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS'
 export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED'
+export const FETCH_USER = "FETCH_USER"
 
 export const login = (email, password) => (dispatch) => {
   request
@@ -27,3 +28,13 @@ export const login = (email, password) => (dispatch) => {
     	}
     })
   }
+
+export const fetchUser = (userId) => (dispatch) => {
+  request
+    .get(`${baseUrl}/users/${userId}`)
+    .then(response => dispatch({
+      type: FETCH_USER,
+      payload: response.body
+    }))
+    .catch(err => alert(err))
+}
