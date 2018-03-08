@@ -11,6 +11,8 @@ class Preferences extends Component {
 
 
   render() {
+
+
     if (!this.props.user) return null
 
     if ( this.props.user.info.preferences.length === 0) {
@@ -55,6 +57,7 @@ class Preferences extends Component {
     )
   }
 }
+
 
 
 const mapStateToProps = function (state, props) {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchDog } from '../actions/dogs'
+import { makeVote } from '../actions/dogs'
 import DislikeButton from './Dislike'
 import LikeButton from  './Like'
-import ShowMatches from  './ShowMatches'
 
 class Dogs extends Component {
 
@@ -15,13 +15,13 @@ class Dogs extends Component {
     const {dog} = this.props.dog
     return (
       <div className="Dogs">
-        <img src={ dog.image } alt="dog"/>
-        <p>Breed: { dog.breed }</p>
+        <img src={ dog.image } alt="woof!"/>
+        <p>Breed: { dog.breed } </p>
         <br />
         <DislikeButton />
         <LikeButton />
         <br />
-        <ShowMatches />
+        <a href="/profile"><button>Show my matches</button></a>
       </div>
     )
   }
@@ -29,8 +29,9 @@ class Dogs extends Component {
 
 const mapStateToProps = function (state, props) {
   return {
-    dog: state
+    dog: state,
+    user: state
   }
 }
 
-export default connect(mapStateToProps, { fetchDog })(Dogs)
+export default connect(mapStateToProps, { fetchDog, makeVote })(Dogs)
