@@ -27,6 +27,7 @@ class Preferences extends Component {
              .sort(function(a, b) {
                return  (b.votes - a.votes);
              })
+             .slice(0,9)
              .map(preference =>
 
              <Preferred
