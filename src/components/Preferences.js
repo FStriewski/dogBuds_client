@@ -3,7 +3,7 @@ import Preferred from './Preferred'
 import { fetchUser } from '../actions/users'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
-
+import Dogs from './Dogs'
 import '../styles/Preferences.css'
 
 class Preferences extends Component {
@@ -14,55 +14,43 @@ class Preferences extends Component {
 
 
     if (!this.props.user) return null
-
+    console.log(this.props)
+    if ( !this.props.user.prefences || this.props.user.preferences.length === 0 ) {
+      return(
+        <div>
+        No prefernces so far!
+        </div>
+      )
+    }
 
     return (
-      <div className="Preferences">
 
+      <div className="Preferences">
         <h2 className="title" >Preferences</h2>
 
-        <div className="preferences-container">
-
-           {this.props.user.info.preferences
-             .sort(function(a, b) {
-               return  (b.votes - a.votes);
-             })
-             .slice(0,5)
-             .map(preference =>
-
-             <Preferred
-               className="preferred"
-               breed={ preference.breed }
-               votes={ preference.votes }
-               image="https://www.what-dog.net/Images/faces2/scroll001.jpg"
-             />
-           )
-         }
-           </div>
-
-           <div className="preferences-container">
-
-              {this.props.user.info.preferences
-                .sort(function(a, b) {
-                  return  (b.votes - a.votes);
-                })
-                .slice(5,10)
-                .map(preference =>
-
-                <Preferred
-                  className="preferred"
-                  breed={ preference.breed }
-                  votes={ preference.votes }
-                  image="https://www.what-dog.net/Images/faces2/scroll001.jpg"
-                />
-              )
-            }
+          <div className="preferences-container">
+            <Preferred
+              className="preferred"
+              breed={ this.props.user.info.preferences[0].breed }
+              votes={ this.props.user.info.preferences[0].votes }
+              image=""
+            />
+            <Preferred
+              className="preferred"
+              breed={ this.props.user.info.preferences[1].breed }
+              votes={ this.props.user.info.preferences[1].votes }
+              image=""
+            />
+            <Preferred
+              className="preferred"
+              breed={ this.props.user.info.preferences[2].breed }
+              votes={ this.props.user.info.preferences[2].votes }
+              image=""
+            />
           </div>
 
-
         <p><b>Want to see more dogs?</b></p>
-
-        <Link to={ `/sniffing` } className="sniffing-btn">Start Sniffing</Link>
+        <Link to={ `/sniffing` } component={Dogs} className="sniffing-btn">Start Sniffing</Link>
       </div>
     )
   }
