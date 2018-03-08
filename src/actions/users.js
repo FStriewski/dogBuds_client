@@ -62,3 +62,18 @@ export const signup = (email, password, username, location, age) => (dispatch) =
 				console.error(err)
 			}
 		})
+
+export const updateUser = (user) => (dispatch) =>
+  request
+    .put(`${baseUrl}/users/${user.id}`)
+    .send(user)
+    .then((response) => {
+      const user = response.body
+      dispatch({
+        type: 'UPDATED_USER',
+        payload: user
+      })
+    })
+    .catch((error) => {
+      console.error('Something went wrong!', error)
+    })

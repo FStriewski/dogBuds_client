@@ -1,6 +1,10 @@
+import * as request from "superagent";
+
 import { USER_LOGIN_SUCCESS } from "../actions/users";
 import { FETCH_USER } from "../actions/users";
 import { UPDATED_VOTES } from "../actions/dogs";
+
+const baseUrl = 'http://localhost:4001'
 
 const initialState = {
   preferences: [
@@ -27,6 +31,9 @@ export default function(state = initialState, action) {
       } else {
         voteItem.votes++;
       }
+      request.put(`${baseUrl}/users/${user.id}`).send(user)
+      .then((response) => {
+        const user = response.body})
       return user;
     default:
       return state;
