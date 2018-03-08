@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Preferred from './Preferred'
 import { fetchUser } from '../actions/users'
-
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
@@ -28,7 +27,7 @@ class Preferences extends Component {
              .sort(function(a, b) {
                return  (b.votes - a.votes);
              })
-             .slice(0,5)
+             .slice(0,3)
              .map(preference =>
 
              <Preferred
@@ -47,7 +46,7 @@ class Preferences extends Component {
                 .sort(function(a, b) {
                   return  (b.votes - a.votes);
                 })
-                .slice(5,10)
+                .slice(3,6)
                 .map(preference =>
 
                 <Preferred

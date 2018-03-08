@@ -12,7 +12,7 @@ class Matches extends Component {
     const matches = this.props.matches
 
     return (
-      <div className="Matches">
+      <div className="Matches" id="Matches">
         <h2 className="title">Matches</h2>
         <h4>Below are your top 3 matches</h4>
         <div className="Matches-container">
