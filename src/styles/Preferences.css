@@ -5,8 +5,10 @@
 .preferences-container {
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
 }
 
 .preferred {
   flex: 1;
+  flex-wrap: wrap;
 }
