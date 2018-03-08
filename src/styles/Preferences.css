@@ -12,3 +12,11 @@
   flex: 1;
   flex-wrap: wrap;
 }
+
+.Preferences {
+  padding-top: 50px;
+}
+
+.more {
+  margin-top: 100px;
+}

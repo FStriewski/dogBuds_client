@@ -17,25 +17,21 @@ class Profile extends Component {
   }
 
   render() {
-    //const {user} = this.props.info
+    // const {currentUser} = this.props.currentUser
     if (!this.props.user) return null
     return (
       <div className="Profile">
-      {console.log(this.props)}
+
         <h2>Profile</h2>
         <div className="bio">
 
           <div className="bio-photo">
-            <img src="" alt="profile"/>
+            <img src="http://www.citydogshare.org/assets/default_dog-f1f5e5aa031ad0a956a936dc4fb4bde95c712f2ad1f99e883b5bc58d22aec668.jpg" alt="profile"/>
           </div>
 
           <div className="bio-details">
-            <p>Username: { this.props.user.info.username } </p>
+            <p>Username: { this.props.user.username } </p>
             <p>Email: { this.props.user.email } </p>
-            <p>Location: { this.props.user.info.location } </p>
-            <p>Age: { this.props.user.info.age }</p>
-
-
           </div>
 
         </div>
@@ -50,9 +46,9 @@ class Profile extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => {
+const mapStateToProps = (state) => {
   return {
-    user: reduxState.user
+    user: state.user
   }
 }
 

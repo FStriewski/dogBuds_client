@@ -10,8 +10,9 @@ class LoginPage extends PureComponent {
 	}
 
 	render() {
-		if (this.props.currentUser) return (
-			<Redirect to="/" />
+
+		if (this.props.user ) return (
+			   <Redirect to={"/users/" + this.props.user.id}  />
 		)
 
 		return (
@@ -20,9 +21,8 @@ class LoginPage extends PureComponent {
 
 				<LoginForm onSubmit={this.handleSubmit} />
         <p></p>
-        { this.props.currentUser && <p>Only logged in users will see this.</p> }
-
-        { !this.props.currentUser && <p>Only guests (people that are not logged in) will see this.</p> }
+        { this.props.user && <p>Only logged in users will see this.</p> }
+        { !this.props.user && <p>Only guests (people that are not logged in) will see this.</p> }
 			</div>
 		)
 	}
@@ -30,7 +30,7 @@ class LoginPage extends PureComponent {
 
 const mapStateToProps = function (state) {
 	return {
-		currentUser: state.currentUser
+		user: state.user
 	}
 }
 

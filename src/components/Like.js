@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { fetchDog } from "../actions/dogs";
 import { makeVote } from "../actions/dogs";
 import button from "../styles/Button.css"
+import { updateUser } from "../actions/users";
 
 export class LikeButton extends Component {
 
   handleClick = () => {
     this.props.makeVote(this.props.user, this.props.dog);
     this.props.fetchDog();
+    this.props.updateUser(this.props.user);
+
   };
 
   render() {
@@ -27,4 +30,4 @@ const mapStateToProps = reduxState => {
   };
 };
 
-export default connect(mapStateToProps, { fetchDog, makeVote })(LikeButton);
+export default connect(mapStateToProps, { fetchDog, makeVote, updateUser })(LikeButton);
