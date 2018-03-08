@@ -4,10 +4,9 @@ const baseUrl = "http://localhost:4002";
 
 export const FETCH_DOG = "FETCH_DOG";
 
+let i = 0
 export const fetchDog = () => dispatch => {
   let randomDog = Math.floor(Math.random() * 79 + 1);
-
-  let i = 0
   var chooseDog = function() {
     let chosenDog;
     if (i < 8) {

@@ -6,13 +6,8 @@ import { UPDATED_VOTES } from "../actions/dogs";
 
 const baseUrl = 'http://localhost:4001'
 
-const initialState = {
-  preferences: [
-    // {breed: 'terrier', votes: 0}
-  ]
-};
 
-export default function(state = initialState, action) {
+export default function(state = [], action) {
   switch (action.type) {
     case USER_LOGIN_SUCCESS:
       return action.payload;
