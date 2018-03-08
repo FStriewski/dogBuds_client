@@ -3,7 +3,7 @@ import Preferred from './Preferred'
 import { fetchUser } from '../actions/users'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
-
+import Dogs from './Dogs'
 import '../styles/Preferences.css'
 
 class Preferences extends Component {
@@ -14,8 +14,8 @@ class Preferences extends Component {
 
 
     if (!this.props.user) return null
-
-    if ( this.props.user.info.preferences.length === 0) {
+    console.log(this.props)
+    if ( !this.props.user.prefences || this.props.user.preferences.length === 0 ) {
       return(
         <div>
         No prefernces so far!
@@ -26,7 +26,6 @@ class Preferences extends Component {
     return (
 
       <div className="Preferences">
-      {console.log(this.props.user.info.preferences.length)}
         <h2 className="title" >Preferences</h2>
 
           <div className="preferences-container">
@@ -51,8 +50,7 @@ class Preferences extends Component {
           </div>
 
         <p><b>Want to see more dogs?</b></p>
-
-        <Link to={ `/sniffing` } className="sniffing-btn">Start Sniffing</Link>
+        <Link to={ `/sniffing` } component={Dogs} className="sniffing-btn">Start Sniffing</Link>
       </div>
     )
   }
