@@ -15,7 +15,7 @@ class Profile extends Component {
   }
 
   render() {
-    //const {user} = this.props.info
+    // const {currentUser} = this.props.currentUser
     if (!this.props.user) return null
     return (
       <div className="Profile">
@@ -28,8 +28,8 @@ class Profile extends Component {
           </div>
 
           <div className="bio-details">
-            <p>Username: { this.props.user.info.username } </p>
-            <p>Email: { this.props.user.info.email } </p>
+            <p>Username: { this.props.user.username } </p>
+            <p>Email: { this.props.user.email } </p>
             <p>Location: { this.props.user.info.location } </p>
             <p>Age: { this.props.user.info.age }</p>
 
@@ -48,9 +48,9 @@ class Profile extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => {
+const mapStateToProps = (state) => {
   return {
-    user: reduxState.user
+    user: state.user
   }
 }
 

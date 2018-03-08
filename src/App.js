@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
-import CreateUser from  './components/CreateUser'
 import Profile from './components/Profile'
 import Dogs from './components/Dogs'
 import LoginPage from './components/LoginPage'
+import SignupPage from './components/SignupPage'
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
          <Route exact path="/users/:id" component={Profile} />
          <Route exact path="/sniffing" component={Dogs} />
          <Route exact path="/login" component={LoginPage} />
-         <Route exact path="/signup" component={CreateUser} />
+         <Route exact path="/signup" component={SignupPage} />
          <Route exact path="/" render={ () => <Redirect to="/profile" /> } />
        </div>
      </Router>
