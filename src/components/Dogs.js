@@ -15,8 +15,8 @@ class Dogs extends Component {
     const {dog} = this.props.dog
     return (
       <div className="Dogs">
-        <img src={ dog.image } alt="dog"/>
-        <p>Breed: { dog.breed }</p>
+        <img src={ dog.image } alt="woof!"/>
+        <p>Breed: { dog.breed } </p>
         <br />
         <DislikeButton />
         <LikeButton />
