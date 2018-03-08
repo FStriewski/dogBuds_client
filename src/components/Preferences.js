@@ -23,13 +23,17 @@ class Preferences extends Component {
 
         <div className="preferences-container">
 
-           {this.props.user.info.preferences.map(preference =>
+           {this.props.user.info.preferences
+             .sort(function(a, b) {
+               return  (b.votes - a.votes);
+             })
+             .map(preference =>
 
              <Preferred
                className="preferred"
                breed={ preference.breed }
                votes={ preference.votes }
-               image={ preference.image }
+               image="https://www.what-dog.net/Images/faces2/scroll001.jpg"
              />
            )
          }
