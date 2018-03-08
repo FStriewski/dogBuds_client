@@ -1,7 +1,5 @@
 import * as request from "superagent";
 
-let i = 0;
-
 const baseUrl = "http://localhost:4002";
 
 export const FETCH_DOG = "FETCH_DOG";
