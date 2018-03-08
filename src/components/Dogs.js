@@ -5,6 +5,8 @@ import { makeVote } from '../actions/dogs'
 import DislikeButton from './Dislike'
 import LikeButton from  './Like'
 import dogs from '../styles/Dogs.css'
+import {Link} from 'react-router-dom'
+import Profile from './Profile'
 
 class Dogs extends Component {
 
@@ -24,7 +26,7 @@ class Dogs extends Component {
         <DislikeButton />
         <LikeButton />
         <br />
-        <a href="/profile"><button className="MatchesButton">Show my matches</button></a>
+        <Link to={ '/users/' + this.props.user.id } component={Profile} ><button>Show my matches</button></Link>
       </div>
     )
   }
