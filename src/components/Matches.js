@@ -38,8 +38,6 @@ class Matches extends Component {
         )
       }
 
-
-
         </div>
 
         <p><b>Want to find more matches?</b></p>

@@ -61,7 +61,7 @@ class Preferences extends Component {
           </div>
 
 
-        <p><b>Want to see more dogs?</b></p>
+        <p className="more"><b>Want to see more dogs?</b></p>
 
         <Link to={ `/sniffing` } className="sniffing-btn">Start Sniffing</Link>
       </div>
