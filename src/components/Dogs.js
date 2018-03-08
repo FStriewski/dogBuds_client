@@ -4,14 +4,14 @@ import { fetchDog } from '../actions/dogs'
 import { makeVote } from '../actions/dogs'
 import DislikeButton from './Dislike'
 import LikeButton from  './Like'
-import dogs from '../styles/Dogs.css'
+import '../styles/Dogs.css'
 import {Link} from 'react-router-dom'
 import Profile from './Profile'
 
 class Dogs extends Component {
 
   componentWillMount() {
-    this.props.fetchDog(67)
+    this.props.fetchDog()
   }
 
   render() {
@@ -26,7 +26,7 @@ class Dogs extends Component {
         <DislikeButton />
         <LikeButton />
         <br />
-        <Link to={ '/users/' + this.props.user.id } component={Profile} ><button>Show my matches</button></Link>
+        <Link to={ '/users/' + this.props.user.id } component={Profile} ><button class="MatchesButton">Show my matches</button></Link>
       </div>
     )
   }
