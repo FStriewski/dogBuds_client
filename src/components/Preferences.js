@@ -28,28 +28,47 @@ class Preferences extends Component {
       <div className="Preferences">
         <h2 className="title" >Preferences</h2>
 
-          <div className="preferences-container">
-            <Preferred
-              className="preferred"
-              breed={ this.props.user.info.preferences[0].breed }
-              votes={ this.props.user.info.preferences[0].votes }
-              image=""
-            />
-            <Preferred
-              className="preferred"
-              breed={ this.props.user.info.preferences[1].breed }
-              votes={ this.props.user.info.preferences[1].votes }
-              image=""
-            />
-            <Preferred
-              className="preferred"
-              breed={ this.props.user.info.preferences[2].breed }
-              votes={ this.props.user.info.preferences[2].votes }
-              image=""
-            />
+        <div className="preferences-container">
+
+           {this.props.user.info.preferences
+             .sort(function(a, b) {
+               return  (b.votes - a.votes);
+             })
+             .slice(0,3)
+             .map(preference =>
+
+             <Preferred
+               className="preferred"
+               breed={ preference.breed }
+               votes={ preference.votes }
+               image="https://www.what-dog.net/Images/faces2/scroll001.jpg"
+             />
+           )
+         }
+           </div>
+
+           <div className="preferences-container">
+
+              {this.props.user.info.preferences
+                .sort(function(a, b) {
+                  return  (b.votes - a.votes);
+                })
+                .slice(3,6)
+                .map(preference =>
+
+                <Preferred
+                  className="preferred"
+                  breed={ preference.breed }
+                  votes={ preference.votes }
+                  image="https://www.what-dog.net/Images/faces2/scroll001.jpg"
+                />
+              )
+            }
           </div>
 
-        <p><b>Want to see more dogs?</b></p>
+
+        <p className="more"><b>Want to see more dogs?</b></p>
+
         <Link to={ `/sniffing` } component={Dogs} className="sniffing-btn">Start Sniffing</Link>
       </div>
     )
@@ -65,4 +84,4 @@ const mapStateToProps = function (state, props) {
 }
 
 
-export default connect(mapStateToProps, { fetchUser })(Preferences)
+export default connect(mapStateToProps, { fetchUser } )(Preferences)

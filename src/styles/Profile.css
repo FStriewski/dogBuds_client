@@ -1,7 +1,7 @@
 
 
 .Profile img {
-  max-width: 300px;
+  max-width: 200px;
   border-radius: 10%;
 }
 
@@ -31,4 +31,8 @@
 .sniffing-btn:hover {
   background-color: grey;
   color: white;
+}
+
+.Profile {
+  margin-top: 100px;
 }
