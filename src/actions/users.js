@@ -31,9 +31,10 @@ export const login = (email, password) => (dispatch) => {
     })
   }
 
-export const fetchUser = (userId) => (dispatch) => {
+export const fetchUser = (userId, jwt) => (dispatch) => {
   request
     .get(`${baseUrl}/users/${userId}`)
+    .set('Authorization', `Bearer ${jwt}`)
     .then(response => dispatch({
       type: FETCH_USER,
       payload: response.body

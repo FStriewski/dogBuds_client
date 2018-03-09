@@ -30,7 +30,7 @@ class Preferences extends Component {
 
         <div className="preferences-container">
 
-           {this.props.user.info.preferences
+           {this.props.user.preferences
              .sort(function(a, b) {
                return  (b.votes - a.votes);
              })
@@ -49,7 +49,7 @@ class Preferences extends Component {
 
            <div className="preferences-container">
 
-              {this.props.user.info.preferences
+              {this.props.user.preferences
                 .sort(function(a, b) {
                   return  (b.votes - a.votes);
                 })
