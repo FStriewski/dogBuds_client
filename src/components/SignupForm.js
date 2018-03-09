@@ -23,42 +23,49 @@ export default class LoginForm extends PureComponent {
 					<label htmlFor="email">Email: </label>
 					<input type="email" name="email" id="email" value={
 						this.state.email || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } required/>
 				</div>
 
 				<div>
 					<label htmlFor="password">Password: </label>
 					<input type="password" name="password" id="password" value={
 						this.state.password || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } required/>
 				</div>
 
 				<div>
-					<label htmlFor="confirmPassword">Confirm password: </label>
+					<label  htmlFor="confirmPassword">Confirm password: </label>
 					<input type="password" name="confirmPassword" id="confirmPassword" value={
 						this.state.confirmPassword || ''
-					} onChange={ this.handleChange } />
+					} onChange={ this.handleChange } required />
 				</div>
 
         <div>
           <label htmlFor="username">Username: </label>
           <input type="text" name="username" id="username" value={
             this.state.username || ''
-          } onChange={ this.handleChange } />
+          } onChange={ this.handleChange } required/>
         </div>
 
         <div>
           <label htmlFor="location">Location: </label>
           <input type="text" name="location" id="location" value={
             this.state.location || ''
-          } onChange={ this.handleChange } />
+          } onChange={ this.handleChange } required/>
         </div>
 
         <div>
           <label htmlFor="age">Age: </label>
           <input type="text" name="age" id="age" value={
             this.state.age || ''
-          } onChange={ this.handleChange } />
+          } onChange={ this.handleChange } required />
+        </div>
+
+        <div>
+          <label htmlFor="image">Image Link: </label>
+          <input type="text" name="image" id="image" value={
+            this.state.image || ''
+          } onChange={ this.handleChange } required/>
         </div>
 
 				{
