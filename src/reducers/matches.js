@@ -1,3 +1,6 @@
+import { FETCH_MATCHES } from "../actions/users";
+
+
 const initialMatches = [
   {
     username: "Luca",
@@ -42,8 +45,11 @@ const initialMatches = [
 ]
 
 
-export default function(state = initialMatches, action = {}) {
-
-  return state
-
+export default function(state = [], action) {
+  switch (action.type) {
+    case FETCH_MATCHES:
+      return action.payload;
+    default:
+      return state;
+  }
 }

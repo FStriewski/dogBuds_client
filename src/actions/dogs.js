@@ -3,8 +3,10 @@ import * as request from "superagent";
 const baseUrl = "http://localhost:4002";
 
 export const FETCH_DOG = "FETCH_DOG";
+export const UPDATED_VOTES = "UPDATED_VOTES";
 
-let i = 0
+let i = 0;
+
 export const fetchDog = () => dispatch => {
   let randomDog = Math.floor(Math.random() * 79 + 1);
   var chooseDog = function() {
@@ -28,8 +30,6 @@ export const fetchDog = () => dispatch => {
     )
     .catch(err => alert(err));
 };
-
-export const UPDATED_VOTES = "UPDATED_VOTES";
 
 export const makeVote = (user, dog) => {
   return dispatch => {

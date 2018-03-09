@@ -15,10 +15,10 @@ class Preferences extends Component {
 
     if (!this.props.user) return null
     console.log(this.props)
-    if ( !this.props.user.prefences || this.props.user.preferences.length === 0 ) {
+    if ( !this.props.user.preferences || this.props.user.preferences.length === 0 ) {
       return(
         <div>
-        No prefernces so far!
+        No preferences so far!
         </div>
       )
     }
