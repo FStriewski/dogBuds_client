@@ -8,6 +8,7 @@ import '../styles/Dogs.css'
 import {Link} from 'react-router-dom'
 import Profile from './Profile'
 
+
 class Dogs extends Component {
 
   componentWillMount() {

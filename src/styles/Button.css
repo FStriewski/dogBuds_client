@@ -34,22 +34,6 @@
   margin: 0 .5em;
 }
 
-.DislikeButton:hover {
-  background: #DC143C;
-background-image:-webkit-linear-gradient(top, #DC143C, #DC143C);
-background-image:-moz-linear-gradient(top, #DC143C, #DC143C);
-background-image:-ms-linear-gradient(top, #DC143C, #DC143C);
-background-image:-o-linear-gradient(top, #DC143C, #DC143C);
-background-image:linear-gradient(top, #DC143C, #DC143C);
-}
 
-.LikeButton:hover {
-  background: #32CD32;
-background-image:-webkit-linear-gradient(top, #32CD32, #32CD32);
-background-image:-moz-linear-gradient(top, #32CD32, #32CD32);
-background-image:-ms-linear-gradient(top, #32CD32, #32CD32);
-background-image:-o-linear-gradient(top, #32CD32, #32CD32);
-background-image:linear-gradient(top, #32CD32, #32CD32);
-}
 
 button:focus {outline:0;}
