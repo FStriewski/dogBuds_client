@@ -8,11 +8,15 @@ import { updateUser } from "../actions/users";
 export class LikeButton extends Component {
 
   handleClick = () => {
-    this.props.makeVote(this.props.user, this.props.dog);
-    this.props.fetchDog();
-    this.props.updateUser(this.props.user);
 
-  };
+      if (!this.props.user.id) {
+        window.location = '../login'
+      } else {
+        this.props.makeVote(this.props.user, this.props.dog);
+        this.props.fetchDog();
+        this.props.updateUser(this.props.user);
+      }
+    };
 
   render() {
     return (

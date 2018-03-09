@@ -7,8 +7,14 @@ import button from '../styles/Button.css'
 export class DislikeButton extends PureComponent {
 
   handleClick = () => {
-    this.props.fetchDog()
-  }
+
+      if (!this.props.user.id) {
+        window.location = '../login'
+      } else {
+        this.props.fetchDog();
+        this.props.updateUser(this.props.user);
+      }
+    };
 
   render() {
     return (
@@ -21,4 +27,10 @@ export class DislikeButton extends PureComponent {
   }
 }
 
-export default connect(null, { fetchDog })(DislikeButton)
+const mapStateToProps = state => {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps, { fetchDog })(DislikeButton);
