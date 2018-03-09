@@ -5,6 +5,7 @@ import Profile from './components/Profile'
 import Dogs from './components/Dogs'
 import LoginPage from './components/LoginPage'
 import SignupPage from './components/SignupPage'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
