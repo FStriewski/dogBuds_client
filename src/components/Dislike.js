@@ -12,7 +12,6 @@ export class DislikeButton extends PureComponent {
         window.location = '../login'
       } else {
         this.props.fetchDog();
-        this.props.updateUser(this.props.user);
       }
     };
 

@@ -2,7 +2,8 @@ import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {login} from '../actions/users'
 import LoginForm from './LoginForm'
-import {Redirect} from 'react-router-dom'
+import SignupPage from './SignupPage'
+import {Redirect, Link} from 'react-router-dom'
 
 class LoginPage extends PureComponent {
 	handleSubmit = (data) => {
@@ -22,8 +23,9 @@ class LoginPage extends PureComponent {
 
 				<LoginForm onSubmit={this.handleSubmit} />
         <p></p>
-        { this.props.currentUser && <p>Only logged in users will see this.</p> }
-        { !this.props.currentUser && <p>Only guests (people that are not logged in) will see this.</p> }
+				<br />
+				<p>Dont have a Profile yet? Go and</p>
+        <Link to={'/signup/'} component={SignupPage} ><button>SIGN UP!</button></Link>
 			</div>
 		)
 	}
