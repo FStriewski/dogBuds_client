@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import Preferences from './Preferences';
 import Matches from './Matches'
-import { fetchUser } from '../actions/users'
-
-
+import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import '../styles/Profile.css'
-
-
 
 class Profile extends Component {
 
   componentWillMount() {
-    this.props.fetchUser(this.props.match.params.id)
+    // this.props.fetchUser(this.props.match.params.id)
   }
 
   render() {
     // const {currentUser} = this.props.currentUser
-    if (!this.props.user) return null
+    if (!this.props.user.id) return <Redirect to="/login" />
     return (
       <div className="Profile">
 
@@ -32,6 +27,8 @@ class Profile extends Component {
           <div className="bio-details">
             <p>Username: { this.props.user.username } </p>
             <p>Email: { this.props.user.email } </p>
+            <p>Location: { this.props.user.location } </p>
+            <p>Age: { this.props.user.age } </p>
           </div>
 
         </div>
@@ -40,7 +37,6 @@ class Profile extends Component {
 
         <Preferences />
 
-
       </div>
     );
   }
@@ -48,9 +44,9 @@ class Profile extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
   }
 }
 
 
-export default connect(mapStateToProps, { fetchUser })(Profile)
+export default connect(mapStateToProps)(Profile)

@@ -4,7 +4,7 @@ import { USER_LOGIN_SUCCESS } from "../actions/users";
 import { FETCH_USER } from "../actions/users";
 import { UPDATED_VOTES } from "../actions/dogs";
 
-const baseUrl = 'http://localhost:4001'
+const baseUrl = 'http://localhost:4002'
 
 
 export default function(state = [], action) {
@@ -15,11 +15,11 @@ export default function(state = [], action) {
       return action.payload;
     case UPDATED_VOTES:
       const user = Object.assign({}, state);
-      const voteItem = user.info.preferences.find(
+      const voteItem = user.preferences.find(
         i => i.breed === action.payload.dog.breed
       );
       if (voteItem === undefined) {
-        user.info.preferences = user.info.preferences.concat({
+        user.preferences = user.preferences.concat({
           breed: action.payload.dog.breed,
           votes: 1
         });

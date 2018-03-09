@@ -10,27 +10,30 @@ class LoginPage extends PureComponent {
 	}
 
 	render() {
-
-		if (this.props.user ) return (
-			   <Redirect to={"/users/" + this.props.user.id}  />
-		)
-
+		if (this.props.user.id) {
+			return (
+				 <Redirect to={"/users/" + this.props.user.id}  />
+			)
+		}
 		return (
 			<div>
 				<h2>Login</h2>
 
 				<LoginForm onSubmit={this.handleSubmit} />
         <p></p>
-        { this.props.user && <p>Only logged in users will see this.</p> }
-        { !this.props.user && <p>Only guests (people that are not logged in) will see this.</p> }
+        { this.props.currentUser && <p>Only logged in users will see this.</p> }
+        { !this.props.currentUser && <p>Only guests (people that are not logged in) will see this.</p> }
 			</div>
 		)
 	}
+
+
 }
 
 const mapStateToProps = function (state) {
 	return {
-		user: state.user
+		currentUser: state.currentUser,
+		user : state.user
 	}
 }
 

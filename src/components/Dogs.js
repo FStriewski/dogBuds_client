@@ -15,6 +15,11 @@ class Dogs extends Component {
   }
 
   render() {
+    // if (!this.props.user.id) {
+    //   return (
+    //      <Link to="/login"  />
+    //   )
+    // }
     const {dog} = this.props.dog
     return (
       <div className="Dogs">
