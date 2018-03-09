@@ -1,23 +1,24 @@
 
 
 .Profile img {
-  max-width: 200px;
+  max-width: 150px;
   border-radius: 10%;
 }
 
-.bio {
+.profile-container {
   display: flex;
   margin-top: 100px;
-  margin-bottom: 100px;
 
 }
 
-.bio-photo {
+.bio {
   flex: 1;
+  margin-top: 30px;
 }
 
-.bio-details {
-  flex: 1;
+
+.matches-container {
+  flex: 2;
 }
 
 .sniffing-btn {
@@ -26,6 +27,7 @@
   text-decoration: none;
   color: grey;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 .sniffing-btn:hover {
@@ -34,5 +36,14 @@
 }
 
 .Profile {
-  margin-top: 100px;
+  margin-top: -60px;
+}
+
+.profile-pic {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.bio-details {
+  text-align: left;
 }
