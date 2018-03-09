@@ -15,6 +15,7 @@ class LoginPage extends PureComponent {
 				 <Redirect to={"/users/" + this.props.user.id}  />
 			)
 		}
+
 		return (
 			<div>
 				<h2>Login</h2>
